@@ -1,0 +1,52 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="formulario-login">
+  <form [formGroup]="registerForm" (ngSubmit)="registrarUsuario()">
+    <img class="icono-login" src="assets/img/logo_navbar.png">
+    <h2 class="reserva_sala">Bienvenido al sistema de reservas, crea tu cuenta</h2>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Nombre de usuario</mat-label>
+      <input type="text" formControlName="username" matInput>
+      <mat-error *ngIf="getErrorField('username')"> Campo requerido. </mat-error>
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Correo</mat-label>
+      <input type="email" formControlName="email" matInput>
+      <mat-error *ngIf="getErrorField('email')"> Debe ingresar un correo. </mat-error>
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Nombre Banda</mat-label>
+      <input type="text" formControlName="nom_banda" matInput>
+      <mat-error *ngIf="getErrorField('nom_banda')"> Campo requerido. </mat-error>
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Nombre</mat-label>
+      <input type="text" formControlName="nom_registra" matInput>
+      <mat-error *ngIf="getErrorField('nom_registra')"> Campo requerido con minimo 3 caracteres.
+      </mat-error></mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Apellido</mat-label>
+      <input type="text" formControlName="ape_registra" matInput>
+      <mat-error *ngIf="getErrorField('ape_registra')"> Campo requerido con minimo 3 caracteres. </mat-error>
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Telefono</mat-label>
+      <input type="tel" formControlName="telefono_usuario" matInput>
+      <mat-error *ngIf="getErrorField('telefono_usuario')"> Campo requerido. </mat-error>
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" formControlName="password" matInput autocomplete="on">
+      <mat-error *ngIf="getErrorField('password')"> Debe ingresar una contraseña con 1 caracter especial, 1 minuscula, 1
+        mayuscula y un numero. </mat-error>
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Confirmar Contraseña</mat-label>
+      <input type="password" formControlName="confirm_password" matInput autocomplete="on">
+      <mat-error *ngIf="getErrorField('password')"> Las contraseñas deben ser iguales. </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" class="ancho-completo margen-boton-login bottom-margin"
+      [disabled]="!registerForm.valid">Registrar</button>
+    <button type="button" (click) = "goLogin()" mat-raised-button color="accent" class="ancho-completo margen-boton-login"
+     >Regresar</button>
+  </form>
+</div>

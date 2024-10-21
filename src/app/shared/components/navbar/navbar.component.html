@@ -1,0 +1,26 @@
+<nav>
+  <!-- Navbar escritorio -->
+  <mat-toolbar color="primary" class="desaparecer-moviles">
+    <a mat-button [routerLink]="">
+      <img class="nav-icon" src="assets/img/logo_navbar.png">
+    </a>
+    <span class="espacio-navbar"></span>
+    <button mat-button *ngFor="let m of menu" (click) = "navigate(m.route)">{{ m.name }}</button>
+  </mat-toolbar>
+  <!-- Navbar moviles -->
+  <div [class.example-container]="sidenavMenu.opened" class="aparecer-moviles">
+    <mat-toolbar color="primary">
+      <button mat-button (click)="sidenavMenu.toggle()">
+        <mat-icon fontIcon="menu" class="white-icon"></mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container" hasBackdrop="true"
+      [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #sidenavMenu mode="over" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <a mat-list-item *ngFor="let m of menu" [routerLink]="m.route" (click)="sidenavMenu.toggle()">{{ m.name }}</a>
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container>
+  </div>
+</nav>

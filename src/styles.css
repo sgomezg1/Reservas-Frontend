@@ -1,0 +1,81 @@
+@import "@angular/material/prebuilt-themes/purple-green.css";
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* CSS General del proyecto*/
+
+.contenedor-aplicacion {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.bottom-margin {
+  margin-bottom: 20px;
+}
+
+.desaparecer-moviles {
+  display: flex !important;
+}
+
+.aparecer-moviles {
+  display: none !important;
+}
+
+.abril-background {
+  background-image: url("assets/img/fondo_uno.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("assets/img/fondo_uno.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.ancho-completo {
+  width: 100%;
+}
+
+.white-icon {
+  color: white;
+}
+
+.margen-espacio-boton-abajo {
+  margin-bottom: 10px;
+}
+
+/* Formulario Login */
+
+.formulario-login {
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  padding-top: 5%;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 70px;
+}
+
+.icono-login {
+  max-width: 200px;
+  padding-bottom: 20px;
+}
+
+/* Responsive proyecto */
+
+@media (max-width: 1024px) {
+  .desaparecer-moviles {
+    display: none !important;
+  }
+
+  .aparecer-moviles {
+    display: flex !important;
+  }
+}

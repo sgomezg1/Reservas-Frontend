@@ -1,0 +1,26 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="formulario-login">
+  <form [formGroup]="loginForm">
+    <img class="icono-login" src="assets/img/logo_navbar.png">
+    <h2 class="reserva_sala">Bienvenido al sistema de reservas</h2>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Usuario o Correo</mat-label>
+      <input type="text" matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="ancho-completo">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput formControlName="password" autocomplete="on">
+    </mat-form-field>
+    <mat-grid-list cols="2" rowHeight="3:1" class="margen-espacio-boton-abajo">
+      <mat-grid-tile>
+        <button type="submit" mat-raised-button color="primary" class="ancho-completo margen-boton-login"
+          [disabled]="!loginForm.valid">Iniciar Sesion</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <a mat-raised-button [routerLink]="['/register']" color="accent"
+          class="ancho-completo margen-boton-registro">Registrate</a>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <a mat-button [routerLink]="['/change-password']" class="ancho-completo">¿Olvidaste tu contraseña?</a>
+  </form>
+</div>

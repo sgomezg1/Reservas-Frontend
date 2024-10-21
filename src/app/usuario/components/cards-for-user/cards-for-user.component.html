@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>SALA NOMBRE_DE_SALA</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf = "isBooking">
+    <p>
+      <b>Fecha:</b> FECHA<br>
+      <b>Hora:</b> HORA<br>
+      <b>Precio:</b> PRECIO<br>
+      <b>Adicionales: </b><br>
+      <mat-chip-listbox aria-label="Instrumentos reserva">
+        <mat-chip-option color="accent">INSTRUMENTO</mat-chip-option>
+        <mat-chip-option color="accent">INSTRUMENTO</mat-chip-option>
+        <mat-chip-option color="accent">INSTRUMENTO</mat-chip-option>
+        <mat-chip-option color="accent">INSTRUMENTO</mat-chip-option>
+        <mat-chip-option color="accent">INSTRUMENTO</mat-chip-option>
+        <mat-chip-option color="accent">INSTRUMENTO</mat-chip-option>
+      </mat-chip-listbox>
+    </p>
+  </mat-card-content>
+  <mat-card-content *ngIf = "!isBooking">
+    <p>
+      <b>Sala:</b> FECHA<br>
+      <b>Fecha:</b> HORA<br>
+      <b>Hora:</b> HORA<br>
+      <b>Valor: </b> VALOR_DE_LA_MULTA<br>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn">CANCELAR</button>
+  </mat-card-actions>
+</mat-card>
