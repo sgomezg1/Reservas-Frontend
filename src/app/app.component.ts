@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'reservasabrilnuevo';
+  title = environment.APP_NAME;
+  constructor(
+    private titleService: Title
+  ) { this.titleService.setTitle(this.title); }
 }
